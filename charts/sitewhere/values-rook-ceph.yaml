@@ -23,3 +23,7 @@ sitewhere-infra-database:
   influxdb:
     persistence:
       storageClass: rook-ceph-block
+  # 2020/01/19 Tony: When I used k8s to start with ceph, I found that the absence of this in the value-rook-ceph.yaml file caused the PVC of tenantsdb to be in the pending state, so I added
+  tenantsdb:
+    persistence:
+      storageClass: rook-ceph-block
